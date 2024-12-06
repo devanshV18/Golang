@@ -1,0 +1,23 @@
+1. malloc and dealloc happens automatically, no manual handling
+
+MEMORY MANAGEMENT 
+
+new()
+
+allocate memory but no initialisation
+you will get a memory address
+zeroed storage -> zeroed storage means memory is initialized to the zero value of its type (e.g., 0 for numbers, "" for strings, nil for pointers). This happens with new, make, or variable declarations.
+make() 
+cant put any data to it initially
+
+allocates memory and initialises it with a value on our behalf so that we can use the variable
+you will get a memory address
+non-zeroed storage -> Non-zeroed storage refers to memory that isn't pre-initialized (e.g., via unsafe or custom memory management), and its contents may contain arbitrary (garbage) data, leading to potential undefined behavior.
+can put any data desired by user.
+
+
+MEMORY MANAGAMENT
+
+GC automatically happend
+anything oos or nil is eligible for GC.
+
