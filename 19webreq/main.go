@@ -37,6 +37,6 @@ func main() {
     content := string(databytes)
 
     //printing content
-    fmt.Println((content))
+    fmt.Println(content)
 
 }
