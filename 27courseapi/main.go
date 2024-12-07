@@ -18,7 +18,7 @@ import (
 type Course struct{
 	CourseId string `json:"cousreid"`
 	CourseName string `json:"coursename"`
-	CoursePrice int `json:"price"`
+	CoursePrice int `json:"-"`
 	Author *Author //type of Author is Author Pointer
 }
 
@@ -68,7 +68,7 @@ func getOneCourse(w http.ResponseWriter, r *http.Request){
 	for _, course := range courses{
 		if course.CourseId == params["id"]{
 			json.NewEncoder(w).Encode(course) //futher destructuring can be done to send more specific data
-
+			return
 		}
 	}
 
@@ -149,6 +149,7 @@ func deleteOneCourse(w http.ResponseWriter, r *http.Request)  {
 		if course.CourseId == params["id"]{
 			courses = append(courses[:index], courses[index+1:]...)
 			json.NewEncoder(w).Encode("Deleted the Targeted course")
+			return
 		}
 	}
 
